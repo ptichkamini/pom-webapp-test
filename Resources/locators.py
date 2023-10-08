@@ -1,0 +1,2 @@
+class LoginPageLocators(object):
+    pass
