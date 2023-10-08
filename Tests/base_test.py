@@ -3,7 +3,7 @@ from selenium import webdriver
 import time
 
 
-URL = "https://opensource-demo.orangehrmlive.com/"
+URL = "https://shop.polymer-project.org/"
 
 
 class BaseTest(unittest.TestCase):
