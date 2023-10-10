@@ -2,12 +2,14 @@ from Tests.base_test import BaseTest
 import time
 from selenium.webdriver.common.by import By
 from Resources.users import *
+from Pages.home_page import HomePage
 
 class LoginTest(BaseTest):
 
     def test_login(self):
-        login = self.driver.find_element(By.ID, "menubar-my-account")
-        login.click()
+        #instaniate home page page object
+        home = HomePage(self.driver)
+        home.nav_to_login()
         user_name = self.driver.find_element(By.ID, "UsernameOrEmail")
         user_name.send_keys(user1_login)
         password = self.driver.find_element(By.ID, "Password")
