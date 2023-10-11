@@ -16,3 +16,5 @@ class LoginTest(BaseTest):
         login = LoginPage(self.driver)
         #login
         login.login(user1_username, user1_password)
+        #check if user is logged in
+        assert login.read_username() == user1_username.upper()

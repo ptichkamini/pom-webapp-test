@@ -5,10 +5,12 @@ from Resources.users import *
 
 class LoginPage(BasePage):
 
-    #locators - put '*' before to "explode" teh tuple into two elements and use in e.g find element
+    #locators - put '*' before to "explode" the tuple into two elements and use in e.g. find element
     USERNAME_ELEMENT = (By.ID, "UsernameOrEmail")
     PASSWORD_ELEMENT = (By.ID, "Password")
     SUBMIT_LOGIN_BUTTON = (By.CLASS_NAME, "btn-login")
+    USERNAME_HEADER = (By.ID, "menubar-my-account")
+
 
     def input_username(self, username):
         username_element = self.driver.find_element(*self.USERNAME_ELEMENT)
@@ -26,3 +28,6 @@ class LoginPage(BasePage):
         self.input_username(username)
         self.input_password(password)
         self.submit_login()
+
+    def read_username(self):
+        return self.driver.find_element(*self.USERNAME_HEADER).text
