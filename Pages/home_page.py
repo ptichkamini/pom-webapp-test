@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 
 
 class HomePage(BasePage):
-    def nav_to_login(self):
-        login = self.driver.find_element(By.ID, "menubar-my-account")
-        login.click()
+    LOGIN_ELEMENT = (By.ID, "menubar-my-account")
 
+    def nav_to_login(self):
+        self.find(self. LOGIN_ELEMENT).click()
