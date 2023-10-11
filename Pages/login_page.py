@@ -13,15 +13,15 @@ class LoginPage(BasePage):
 
 
     def input_username(self, username):
-        username_element = self.driver.find_element(*self.USERNAME_ELEMENT)
+        username_element = self.find(self.USERNAME_ELEMENT)
         username_element.send_keys(username)
 
     def input_password(self, password):
-        password_element = self.driver.find_element(*self.PASSWORD_ELEMENT)
+        password_element = self.find(self.PASSWORD_ELEMENT)
         password_element.send_keys(password)
 
     def submit_login(self):
-        submit_login_button = self.driver.find_element(*self.SUBMIT_LOGIN_BUTTON)
+        submit_login_button = self.find(self.SUBMIT_LOGIN_BUTTON)
         submit_login_button.click()
 
     def login(self, username, password):
@@ -30,4 +30,4 @@ class LoginPage(BasePage):
         self.submit_login()
 
     def read_username(self):
-        return self.driver.find_element(*self.USERNAME_HEADER).text
+        return self.find(self.USERNAME_HEADER).text
