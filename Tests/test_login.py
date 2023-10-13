@@ -1,6 +1,4 @@
 from Tests.base_test import BaseTest
-import time
-from selenium.webdriver.common.by import By
 from Resources.users import *
 from Pages.home_page import HomePage
 from Pages.login_page import LoginPage
