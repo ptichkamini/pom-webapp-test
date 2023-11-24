@@ -35,3 +35,6 @@ class HomePage(BasePage):
 
     def add_to_cart(self):
         self.find(self.ADD_TO_CART_BUTTON).click()
+
+    def is_text_present(self, text):
+        return str(text) in self.driver.page_source

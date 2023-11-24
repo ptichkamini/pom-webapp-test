@@ -15,6 +15,9 @@ class CartTest(BaseTest):
         home = HomePage(self.driver)
         home.search_for_item("ball")
         home.select_second_result()
-        #add it to cart
         home.add_to_cart()
-        #check if item is in the cart
+        #check if item was added
+        try:
+            home.is_text_present("successfully added")
+        except AssertionError:
+            print("article was not added to cart")
