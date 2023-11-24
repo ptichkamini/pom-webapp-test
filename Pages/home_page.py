@@ -1,9 +1,6 @@
 from Pages.base_page import BasePage
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
-import time
-from selenium.webdriver import ActionChains
-
 
 class HomePage(BasePage):
     LOGIN_ELEMENT = (By.ID, "menubar-my-account")
@@ -12,7 +9,6 @@ class HomePage(BasePage):
     SEARCH_BAR = (By.XPATH, ' //*[@id="header"]/div[2]/div/div/div[1]/div[2]/form/input')
     SEARCH_BUTTON = (By.XPATH, '//*[@id="header"]/div[2]/div/div/div[1]/div[2]/form/button/i')
     SECOND_ARTICLE = (By.XPATH, "//span[text()='Supreme Golfball']")
-        #(By.XPATH, "(//div[@class='artlist artlist-grid artlist-4-cols']//article)[2]")
     ADD_TO_CART_BUTTON = (By.XPATH, "//span[text()='Add to cart']")
 
     def nav_to_login(self):
