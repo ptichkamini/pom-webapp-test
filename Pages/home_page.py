@@ -11,7 +11,9 @@ class HomePage(BasePage):
     CHECKOUT_BUTTON = (By.CLASS_NAME, "btn-action")
     SEARCH_BAR = (By.XPATH, ' //*[@id="header"]/div[2]/div/div/div[1]/div[2]/form/input')
     SEARCH_BUTTON = (By.XPATH, '//*[@id="header"]/div[2]/div/div/div[1]/div[2]/form/button/i')
-    SECOND_ARTICLE = (By.XPATH, "(//div[@class='artlist artlist-grid artlist-4-cols']//article)[2]")
+    SECOND_ARTICLE = (By.XPATH, "//span[text()='Supreme Golfball']")
+        #(By.XPATH, "(//div[@class='artlist artlist-grid artlist-4-cols']//article)[2]")
+    ADD_TO_CART_BUTTON = (By.XPATH, "//span[text()='Add to cart']")
 
     def nav_to_login(self):
         self.find(self. LOGIN_ELEMENT).click()
@@ -31,4 +33,5 @@ class HomePage(BasePage):
     def select_second_result(self):
         self.find(self.SECOND_ARTICLE).click()
 
-
+    def add_to_cart(self):
+        self.find(self.ADD_TO_CART_BUTTON).click()
