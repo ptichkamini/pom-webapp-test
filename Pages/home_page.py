@@ -2,6 +2,7 @@ from Pages.base_page import BasePage
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 import time
+from selenium.webdriver import ActionChains
 
 
 class HomePage(BasePage):
@@ -10,6 +11,7 @@ class HomePage(BasePage):
     CHECKOUT_BUTTON = (By.CLASS_NAME, "btn-action")
     SEARCH_BAR = (By.XPATH, ' //*[@id="header"]/div[2]/div/div/div[1]/div[2]/form/input')
     SEARCH_BUTTON = (By.XPATH, '//*[@id="header"]/div[2]/div/div/div[1]/div[2]/form/button/i')
+    SECOND_ARTICLE = (By.XPATH, "(//div[@class='artlist artlist-grid artlist-4-cols']//article)[2]")
 
     def nav_to_login(self):
         self.find(self. LOGIN_ELEMENT).click()
@@ -25,3 +27,8 @@ class HomePage(BasePage):
     def search_for_item(self, item):
         self.find(self.SEARCH_BAR).send_keys(item)
         self.find(self.SEARCH_BUTTON).click()
+
+    def select_second_result(self):
+        self.find(self.SECOND_ARTICLE).click()
+
+

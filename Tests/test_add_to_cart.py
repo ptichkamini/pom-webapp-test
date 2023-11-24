@@ -15,9 +15,7 @@ class CartTest(BaseTest):
         home = HomePage(self.driver)
         home.search_for_item("ball")
         time.sleep(3)
-        #search for a product
-        #select it and add it to cart
+        home.select_second_result()
+        time.sleep(3)
+        #add it to cart
         #check if item is in the cart
-
-
-
